@@ -1,0 +1,378 @@
+
+@online{pratik_stm32_2021,
+	title = {{STM}32 {WiFi} - What are your Options?},
+	url = {https://pcbartists.com/design/embedded/stm32-wifi-options/},
+	abstract = {Adding {WiFi} to {STM}32 can open up a lot of possibilities for {IoT} and industrial automation applications. We explore some {STM}32 {WiFi} options.},
+	titleaddon = {{PCB} Artists},
+	author = {{Pratik}},
+	urldate = {2022-04-18},
+	date = {2021-06-22},
+	langid = {british},
+	file = {Snapshot:C\:\\Users\\gvamorim\\Zotero\\storage\\CNBNRBK3\\stm32-wifi-options.html:text/html},
+}
+
+@video{atomic14_build_2020,
+	title = {Build your own Alexa with the {ESP}32 and {TensorFlow} Lite},
+	url = {https://www.youtube.com/watch?v=re-dSV_a0tM},
+	abstract = {We've been building towards this project in the previous set of videos. And we're now ready to build our very own {DIY} Alexa!
+
+All the code for this project is on {GitHub} - https://github.com/atomic14/diy-alexa
+
+What are we building - 1:15
+Wake Word Detection - 2:27
+Command Recognition - 11:47
+Digging into the code - 16:30
+What's life all about Marvin? - 21:52
+
+To detect the wake words we stream audio from either an I2S microphone or from the {ADC}. The wake word detector looks at a 1-second window of audio. The spectrogram of the audio is calculated and fed into a {TensorFlow} Lite model.
+
+Once we detect the wake word we stream the audio up to wit.ai to recognise the user's intent.
+
+It works surprisingly well for such a small model, there are improvements that could be made with more training data.
+
+I'll leave the access token for wit.ai live for as long as I can, but at some point, you will need to generate your own wit.ai application.
+
+Let me know how you get on in the comments!
+
+Related Videos:
+
+Audio Input
+
+https://youtu.be/{VVGln}\_-{XEgI}
+https://youtu.be/3g7l5bm7fZ8
+https://youtu.be/{pPh}3\_ciEmzs
+
+Audio Output
+
+https://youtu.be/At8PDQ3g7FQ
+
+And {TensorFlow} Lite for machine learning
+
+https://youtu.be/{kZdIO}82059E
+
+Components you could use:
+
+{MAX}98357 - https://amzn.to/3cg88Z5
+{TinyPico} - https://amzn.to/3vVoONp
+{INMP}441 I2S Microphone: https://amzn.to/3cicuiv
+{ICS}-43434 I2S Microphone: https://www.tindie.com/products/21519/
+{ESP}32 Dev board: https://amzn.to/3gb6fyc
+Analogue Audio Amplifier: https://amzn.to/3pxkEJr
+Speakers: https://amzn.to/3pjWFgq
+
+---
+
+
+Want to help support the channel? I'm accepting coffee on https://ko-fi.com/atomic14},
+	author = {{atomic14}},
+	urldate = {2022-04-18},
+	date = {2020-10-04},
+}
+
+@video{atomic14_tensorflow_2020,
+	title = {{TensorFlow} Lite With Platform.io and the {ESP}32},
+	url = {https://www.youtube.com/watch?v=kZdIO82059E},
+	abstract = {In this video, we get {TensorFlow} Lite up and running on the {ESP}32 using Platform.io
+
+We create a very simple model in {TensorFlow}, train it up, and then export it for use in {TensorFlow} Lite. We then get this model working in a simple Platform.io project and run it on the {ESP}32.
+
+The {GitHub} repo is here: https://github.com/atomic14/tensorflo...
+
+Instructions for extract the tfmicro code for use in your own projects can be found here: https://github.com/atomic14/platformi...
+
+Components:
+
+{ESP}32 Dev board: https://amzn.to/3gb6fyc
+
+---
+
+
+Want to help support the channel? I'm accepting coffee on https://ko-fi.com/atomic14},
+	author = {{atomic14}},
+	urldate = {2022-04-18},
+	date = {2020-09-24},
+}
+
+@video{atomic14_esp32_2020,
+	title = {{ESP}32 Audio Input - {INMP}441 and {SPH}0645 {MEMS} I2S Breakout Boards},
+	url = {https://www.youtube.com/watch?v=3g7l5bm7fZ8},
+	abstract = {We're back looking at some more options for getting audio data into the {ESP}32!
+
+In the previous video, we looked at a couple of microphone boards (the {MAX}9814 and the {MAX}4466) using the {ESP}32's built-in analogue to digital converter and I2S peripheral to read the audio data.: https://youtu.be/{pPh}3\_ciEmzs
+
+It's worth recapping that video as there's some interesting stuff around sampling rates, {DMA} transfer and {ADC} calibration.
+
+If you like {ESP}32 audio videos - I've got a complete set on this playlist: https://www.youtube.com/playlist?list...
+
+In this video, we're going to be looking at a couple of boards with {MEMS} (Micro-Electro-Mechanical System) microphones.
+
+The two boards we're looking at are the {SPH}0645 and the {INMP}441.
+
+What's really interesting with these boards is that they integrate the audio amplifier, {ADC} and the I2S interface. So the output from the boards can be fed directly into the {ESP}32 without using the {ADC}.
+
+Once again we're taking advantage of I2S and {DMA} transfers to get the data into the {ESP}32.
+
+The code I used is all in the {GitHub} repo here: https://github.com/atomic14/esp32\_audio
+
+In the next video, we'll look at getting audio out of the {ESP}32, another small step to finishing my next project.
+
+Thanks for watching, and don't forget to subscribe!
+
+---
+
+
+Want to help support the channel? I'm accepting coffee on https://ko-fi.com/atomic14},
+	author = {{atomic14}},
+	urldate = {2022-04-18},
+	date = {2020-09-11},
+}
+
+@video{amazon_web_services_what_2019,
+	title = {What is {AWS}? {\textbar} Amazon Web Services},
+	url = {https://www.youtube.com/watch?v=a9__D53WsUs},
+	shorttitle = {What is {AWS}?},
+	abstract = {Amazon Web Services ({AWS}) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 services such as compute, databases, and storage. Learn more: https://amzn.to/33lsybW
+
+Explore how millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using {AWS} to lower costs, become more agile, and innovate faster. 
+
+To learn more about our products and customers see the links below:
+Topics:
+Cloud Products: 00:39:03 https://aws.amazon.com/products/
+{AWS} Startups: https://aws.amazon.com/startups/ 
+{AWS} in the Enterprise: https://aws.amazon.com/enterprise/
+{AWS} in the Public Sector: https://aws.amazon.com/government-edu... 
+Cloud Solutions by Industry: https://aws.amazon.com/industries/
+Compute: https://aws.amazon.com/products/compute/ 
+Storage: https://aws.amazon.com/products/storage/ 
+Databases: 1:11:00  https://aws.amazon.com/products/datab... 
+Machine Learning: https://aws.amazon.com/machine-learning/},
+	author = {{Amazon Web Services}},
+	urldate = {2022-06-14},
+	date = {2019-12-01},
+}
+
+@online{noauthor_o_nodate,
+	title = {O que é {AWS}? Como funciona Amazon Web Services},
+	url = {https://aws.amazon.com/pt/what-is-aws/?nc2=h_ql_le_int},
+	urldate = {2022-06-14},
+}
+
+@video{amazon_web_services_transforming_2020,
+	title = {Transforming your Business with {AWS} {IoT}},
+	url = {https://www.youtube.com/watch?v=-E-sgEsgwRY},
+	abstract = {{AWS} {IoT} operates your {IoT} infrastructure expertly, securely and at scale, allowing you to transform your business and focus on your customers.
+
+Learn more at - https://amzn.to/3nCIgtK
+
+Subscribe: 
+More {AWS} videos http://bit.ly/2O3zS75 
+More {AWS} events videos http://bit.ly/316g9t4
+
+\#{AWS} \#{AWSIoT} \#Edge \#{EdgeComputing} \#Bayer \#Rachio \#{VW} \#twisthink},
+	author = {{Amazon Web Services}},
+	urldate = {2022-06-14},
+	date = {2020-11-20},
+}
+
+@video{amazon_web_services_aws_2020,
+	title = {{AWS} {IoT} for the Connected Home},
+	url = {https://www.youtube.com/watch?v=FerZ0KvlP7g},
+	abstract = {As the use of connected home devices continue to grow, more and more data is being pushed to the cloud, where the latest {IoT} and machine learning technologies are enabling new innovations in connected home applications. {AWS} {IoT} helps connected home device manufacturers easily, quickly, and securely build differentiated connected home products at scale.
+
+Learn more about {AWS} {IoT} at - https://amzn.to/3cn38Rq
+
+Subscribe: 
+More {AWS} videos http://bit.ly/2O3zS75 
+More {AWS} events videos http://bit.ly/316g9t4
+
+\#{AWS}},
+	author = {{Amazon Web Services}},
+	urldate = {2022-06-14},
+	date = {2020-09-23},
+}
+
+@online{noauthor_o_nodate-1,
+	title = {O que é {AWS} Lambda? - {dataRain} Consulting {\textbar} Advanced Partner},
+	url = {https://www.datarain.com.br/blog/o-que-e-aws-lambda/},
+	urldate = {2022-06-14},
+}
+
+@online{noauthor_embedded_nodate,
+	title = {embedded system Icon - Download embedded system Icon 3358309 {\textbar} Noun Project},
+	url = {https://thenounproject.com/icon/embedded-system-3358309/},
+	urldate = {2022-06-21},
+}
+
+@online{noauthor_download_nodate,
+	title = {Download Amazon Alexa Logo in {SVG} Vector or {PNG} File Format - Logo.wine},
+	url = {https://www.logo.wine/logo/Amazon_Alexa},
+	urldate = {2022-06-21},
+	file = {Download Amazon Alexa Logo in SVG Vector or PNG File Format - Logo.wine:C\:\\Users\\gvamorim\\Zotero\\storage\\NY9ZMY52\\Amazon_Alexa.html:text/html},
+}
+
+@online{noauthor_ficheirouser_nodate,
+	title = {Ficheiro:User icon {BLACK}-01.png – Wikipédia, a enciclopédia livre},
+	url = {https://pt.wikipedia.org/wiki/Ficheiro:User_icon_BLACK-01.png},
+	urldate = {2022-06-21},
+}
+
+@online{noauthor_download_nodate-1,
+	title = {Download mic icon png - Free {PNG} Images {\textbar} {TOPpng}},
+	url = {https://toppng.com/show_download/126062/mic-icon/large},
+	urldate = {2022-06-21},
+}
+
+@online{noauthor_aws_nodate,
+	title = {{AWS} {IoT} - Internet of Things - Amazon Web Services},
+	url = {https://aws.amazon.com/pt/iot/},
+	urldate = {2022-06-27},
+}
+
+@online{noauthor_aws_nodate-1,
+	title = {{AWS} {IoT} Solution Repository - Amazon Web Services},
+	url = {https://aws.amazon.com/pt/iot/solutions/?nc=sn&loc=3&dn=1&iot-solution-repository-cards.sort-by=item.additionalFields.headline&iot-solution-repository-cards.sort-order=asc&awsf.iot-solution-repository-filter-industry=*all&awsf.iot-solution-repository-filter-products=*all&awsf.iot-solution-repository-filter-usecase=*all&awsf.iot-solution-repository-filter-solution-type=*all},
+	urldate = {2022-06-27},
+}
+
+@online{noauthor_iot_nodate,
+	title = {{IoT} para residências conectadas {\textbar} Automação residencial, segurança e monitoramento residenciais, redes residenciais {\textbar} {AWS} {IoT}},
+	url = {https://aws.amazon.com/pt/iot/solutions/connected-home/},
+	urldate = {2022-06-27},
+}
+
+@online{noauthor_aws_nodate-2,
+	title = {{AWS} {IoT} e Alexa},
+	url = {https://aws.amazon.com/pt/iot/solutions/connected-home/iot-and-alexa/},
+	urldate = {2022-06-27},
+}
+
+@online{noauthor_introducing_nodate,
+	title = {Introducing Alexa Voice Service Integration for {AWS} {IoT} Core, a new way to cost-effectively bring Alexa Voice to any type of connected device {\textbar} The Internet of Things on {AWS} – Official Blog},
+	url = {https://aws.amazon.com/pt/blogs/iot/introducing-alexa-voice-service-integration-for-aws-iot-core/},
+	urldate = {2022-06-27},
+}
+
+@online{noauthor_17_nodate,
+	title = {(17) {iDevices} Accelerates Innovation and Develops Instinct™ Product Software in 4 Months with {AWS} {IoT} - {YouTube}},
+	url = {https://www.youtube.com/watch?v=GWsKe8NiwaE},
+	urldate = {2022-06-27},
+}
+
+@online{noauthor_european_nodate,
+	title = {European {RISC}-V chip for {IoT} development kit - {eeNews} Europe},
+	url = {https://www.eenewseurope.com/en/european-risc-v-chip-for-iot-development-kit/},
+	urldate = {2022-07-06},
+}
+
+@online{noauthor_learn_nodate,
+	title = {Learn How to Use Alexa Voice Service ({AVS}) Integration for {AWS} {IoT} Core {\textbar} {AWS} Online Tech Talks},
+	url = {https://pages.awscloud.com/Learn-How-to-Use-Alexa-Voice-Service-AVS-Integration-for-AWS-IoT-Core_2020_0103-IOT_OD.html},
+	urldate = {2022-07-06},
+}
+
+@online{noauthor_amazon_nodate,
+	title = {Amazon {FreeRTOS} - Extends {FreeRTOS} kernel with open source libraries to easily and securely connect your {MCUs} to the cloud - {STMicroelectronics}},
+	url = {https://www.st.com/en/partner-products-and-services/amazon-freertos.html},
+	urldate = {2022-07-06},
+}
+
+@online{noauthor_european_nodate-1,
+	title = {European {RISC}-V chip for {IoT} development kit - {eeNews} Europe},
+	url = {https://www.eenewseurope.com/en/european-risc-v-chip-for-iot-development-kit/},
+	urldate = {2022-07-06},
+}
+
+@online{noauthor_nxp_nodate,
+	title = {{NXP} {EdgeReady} {\textbar} {MCU} for Alexa Voice Service {\textbar} {NXP} Semiconductors},
+	url = {https://www.nxp.com/design/designs/edgeready-mcu-based-solution-for-alexa-for-iot:MCU-VOICE-CONTROL-AVS#buy},
+	urldate = {2022-07-06},
+}
+
+@online{noauthor_hacks_nodate,
+	title = {Hacks {\textbar} Markdown Guide},
+	url = {https://www.markdownguide.org/hacks/#line-breaks-within-table-cells},
+	urldate = {2022-07-06},
+}
+
+@online{noauthor_o_nodate-2,
+	title = {O que é {IoT} (Internet das Coisas)? {\textbar} Oracle Brasil},
+	url = {https://www.oracle.com/br/internet-of-things/what-is-iot/},
+	urldate = {2022-07-07},
+}
+
+@online{noauthor_what_nodate,
+	title = {What is {IoT} (Internet of Things) and How Does it Work? - Definition from {TechTarget}.com},
+	url = {https://www.techtarget.com/iotagenda/definition/Internet-of-Things-IoT},
+	urldate = {2022-07-07},
+}
+
+@online{noauthor_o_nodate-3,
+	title = {O que é o {AWS} {IoT}? - {AWS} {IoT} Core},
+	url = {https://docs.aws.amazon.com/pt_br/iot/latest/developerguide/what-is-aws-iot.html},
+	urldate = {2022-07-07},
+}
+
+@online{noauthor_freertos_nodate,
+	title = {{FreeRTOS} – Sistema operacional em tempo real para microcontroladores – {AWS}},
+	url = {https://aws.amazon.com/pt/freertos/},
+	urldate = {2022-07-08},
+}
+
+@online{noauthor_freertos_nodate-1,
+	title = {{FreeRTOS} - Wikipedia},
+	url = {https://en.wikipedia.org/wiki/FreeRTOS},
+	urldate = {2022-07-08},
+}
+
+@online{noauthor_mqtt_nodate,
+	title = {{MQTT} Publish, Subscribe \& Unsubscribe - {MQTT} Essentials: Part 4},
+	url = {https://www.hivemq.com/blog/mqtt-essentials-part-4-mqtt-publish-subscribe-unsubscribe/},
+	urldate = {2022-07-10},
+}
+
+@online{noauthor_aws_nodate-3,
+	title = {{AWS} {IoT} Core},
+	url = {https://aws.amazon.com/pt/iot-core/},
+	urldate = {2022-07-10},
+}
+
+@online{noauthor_mqtt_nodate-1,
+	title = {{MQTT} - The Standard for {IoT} Messaging},
+	url = {https://mqtt.org/},
+	urldate = {2022-07-10},
+}
+
+@online{noauthor_oasis_nodate,
+	title = {{OASIS} (organization) - Wikipedia},
+	url = {https://en.wikipedia.org/wiki/OASIS_(organization)},
+	urldate = {2022-07-10},
+}
+
+@online{noauthor_mqtt_nodate-2,
+	title = {{MQTT} - Wikipedia},
+	url = {https://en.wikipedia.org/wiki/MQTT},
+	urldate = {2022-07-10},
+}
+
+@online{noauthor_what_nodate-1,
+	title = {What is Alexa Voice Services ({AVS})? - Definition from {WhatIs}.com},
+	url = {https://www.techtarget.com/whatis/definition/Alexa-Voice-Services-AVS},
+	urldate = {2022-07-10},
+}
+
+@online{noauthor_b-l475e-iot01a_nodate,
+	title = {B-L475E-{IOT}01A - {STM}32L4 Discovery kit {IoT} node, low-power wireless, {BLE}, {NFC}, {SubGHz}, Wi-Fi - {STMicroelectronics}},
+	url = {https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html},
+	abstract = {B-L475E-{IOT}01A - {STM}32L4 Discovery kit {IoT} node, low-power wireless, {BLE}, {NFC}, {SubGHz}, Wi-Fi, B-L475E-{IOT}01A1, B-L475E-{IOT}01A2, {STMicroelectronics}},
+	urldate = {2022-09-07},
+	langid = {english},
+	file = {Snapshot:C\:\\Users\\gvamorim\\Zotero\\storage\\A4S6JDTT\\b-l475e-iot01a.html:text/html},
+}
+
+@online{noauthor_nxp_nodate-1,
+	title = {{NXP} {EdgeReady} {\textbar} {MCU} for Alexa Voice Service},
+	url = {https://www.nxp.com/design/designs/edgeready-mcu-based-solution-for-alexa-for-iot:MCU-VOICE-CONTROL-AVS},
+	abstract = {{MCU}-based solution for Amazon's Alexa Voice Service ({AVS}) Integration for {AWS} {IoT} Core leverages the i.{MX} {RT} crossover {MCU} for an out-of-box {AVS} experience},
+	urldate = {2022-09-07},
+	langid = {american},
+}
