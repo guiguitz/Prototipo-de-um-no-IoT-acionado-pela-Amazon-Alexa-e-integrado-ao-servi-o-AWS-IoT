@@ -3,14 +3,12 @@
 	openright,
 	twoside,
 	a4paper,
-	english,
-	spanish,
 	brazil,
 ]{abntex2}
 
-% ---
+% -----------------------------------------------------------------------------
 % PACOTES
-% ---
+% -----------------------------------------------------------------------------
 
 \usepackage{cmap}
 \usepackage{lmodern}
@@ -25,6 +23,49 @@
 \usepackage[alf]{abntex2cite}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{tabularray}
+\usepackage{longtable}
+
+% ------------------------------------------------------------------------------------------------
+% JSON
+\usepackage{listings,xcolor,caption}
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\renewcommand{\lstlistingname}{Bloco de Código} % Listing -> Bloco de Código
+\renewcommand{\lstlistlistingname}{Lista de Blocos de Código} % List of Listings -> Lista de Blocos de Código
+
+% ------------------------------------------------------------------------------------------------
 
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 \renewcommand{\backref}{}
@@ -36,13 +77,13 @@
     \else
         Citado #1 vezes nas páginas #2.%
     \fi}%
-% ---
+% -----------------------------------------------------------------------------
 
 
-% ---
+% -----------------------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
-% ---
-\titulo{Protótipo de sistema embutido de baixo custo integrado ao Amazon Voice Service}
+% -----------------------------------------------------------------------------
+\titulo{Protótipo de um nó IoT acionado pela Amazon Alexa e integrado ao serviço AWS IoT}
 \autor{Guilherme Vinícius Barbosa Pereira Amorim}
 \local{Belo Horizonte}
 \data{2022}
@@ -57,9 +98,9 @@
 
 % O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição e a área de concentração
 \preambulo{Monografia apresentada durante o Seminário dos Trabalhos de Conclusão do Curso de Graduação em Engenharia Elétrica da UFMG, como parte dos requisitos necessários à obtenção do título de Engenheiro Eletricista.}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Configurações de aparência do PDF final
 
 % alterando o aspecto da cor azul
@@ -81,11 +122,11 @@
         bookmarksdepth=4
 }
 \makeatother
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Espaçamentos entre linhas e parágrafos
-% ---
+% -----------------------------------------------------------------------------
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -93,11 +134,11 @@
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}
 
-% ---
+% -----------------------------------------------------------------------------
 % compila o índice
-% ---
+% -----------------------------------------------------------------------------
 \makeindex
-% ---
+% -----------------------------------------------------------------------------
 
 % ----
 % Início do documento
@@ -107,102 +148,135 @@
 % Retira espaço extra obsoleto entre as frases.
 \frenchspacing
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % \pretextual
 
-% ---
+% -----------------------------------------------------------------------------
 % Capa
-% ---
+% -----------------------------------------------------------------------------
 \imprimircapa
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Folha de rosto
-% ---
+% -----------------------------------------------------------------------------
 \imprimirfolhaderosto
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Dedicatória
-% ---
+% -----------------------------------------------------------------------------
 \begin{dedicatoria}
 \end{dedicatoria}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Agradecimentos
-% ---
+% -----------------------------------------------------------------------------
 \begin{agradecimentos}
 \end{agradecimentos}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % inserir lista de ilustrações
-% ---
+% -----------------------------------------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % inserir lista de tabelas
-% ---
+% -----------------------------------------------------------------------------
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
 \cleardoublepage
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
+% inserir lista de blocos de código
+% -----------------------------------------------------------------------------
+\pdfbookmark[0]{\lstlistlistingname}{lot}
+\lstlistoflistings
+\cleardoublepage
+% -----------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------
+% inserir lista de tabelas
+% -----------------------------------------------------------------------------
+\begin{siglas}
+    \item[ASK] Alexa Skills Kit
+    \item[AWS] Amazon Web Services
+    \item[CLI] AWS Command Line Interface
+    \item[EC2] Amazon Elastic Compute Cloud
+    \item[HTTPS] Hypertext Transfer Protocol Secure
+    \item[IAM] AWS Identity and Access Management
+    \item[IDE] Ambiente de desenvolvimento integrado
+    \item[IoT] Internet das Coisas
+    \item[LED] Diodo emissor de luz
+    \item[MQTT] MQ Telemetry Transport
+    \item[SDK] Kit de desenvolvimento de software
+    \item[TI] Tecnologia da Informação
+    \item[TLS] Transport Layer Security
+    \item[USB] Universal Serial Bus
+\end{siglas}
+
+% -----------------------------------------------------------------------------
 % inserir o sumario
-% ---
+% -----------------------------------------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage
-% ---
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % ELEMENTOS TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \textual
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Capítulo 1 - Introdução
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \include{Introducao/Introducao}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Capítulo 2 - Referencial teórico
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \include{ReferencialTeorico/ReferencialTeorico}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Capítulo 3 - Metodologia
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \include{Metodologia/Metodologia}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Capítulo 4 - Resultados e Discussão
-% ----------------------------------------------------------
-% \include{ResultadosEDiscussao/ResultadosEDiscussao}
+% -----------------------------------------------------------------------------
+\include{ResultadosEDiscussao/ResultadosEDiscussao}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Capítulo 5 - Conclusões
-% ----------------------------------------------------------
-% \include{Conclusoes/Conclusoes}
+% -----------------------------------------------------------------------------
+\include{Conclusoes/Conclusoes}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \postextual
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Referências bibliográficas
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % \bibliographystyle{plain}
 % \begin{small}
 % \bibliography{Referências/referencias_zotero}
 % \end{small}
+
+% -----------------------------------------------------------------------------
+% Apêndice
+% -----------------------------------------------------------------------------
+\include{Apêndice/Apêndice}
 
 \end{document}
