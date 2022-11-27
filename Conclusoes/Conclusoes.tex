@@ -1,3 +1,23 @@
 \chapter{Conclusões}\label{chapter:conclusoes}
 
-PENDING...
+Conclui-se nesse trabalho que o kit de desenvolvimento \textit{B-L475E-IOT01A2} da STMicroelectronics atende os requisitos mínimos para a prototipagem de um nó IoT integrado ao serviço AWS IoT. Ademais, a infraestrutura de serviços da Amazon satisfaz as necessidades de um desenvolvedor de aplicações IoT dado que a AWS oferece os seguintes recursos a seus clientes:
+
+\begin{itemize}
+	\item Segurança com o modelo compartilhado de responsabilidade e o IAM.;
+	\item Suporte para a criação de nós IoT com o serviço AWS IoT;
+	\item Suporte de desenvolvimento e testes para o protocolo MQTT;
+	\item Gerenciamento de dispositivos, ou conjunto de dispositivos, via AWS IoT Core;
+	\item Pagamento somente do que for utilizado, reduzindo custos e permitindo crescimento em escala.
+\end{itemize}
+
+Conclui-se, também, que o desenvolvimento de habilidades para a Alexa através do ASK atende as necessidade dos desenvolvedores, uma vez a Amazon provem recursos para teste, SDKs para o desenvolvimento, suporte à CLI e possibilidade de implementação do back-end na própria AWS (através do AWS Lambda).
+
+\section{Sugestão de Trabalhos Futuros}\label{section:sugesto_de_trabalhos_futuros}
+
+Uma sugestão de trabalho futuro é a implementação de uma Alexa integrada no dispositivo \textit{B-L475E-IOT01A2}. Esse kit de desenvolvimento atende todos os parâmetros mínimos definidos pela Amazon para um dispositivo de IoT integrado à AVS (definidos na \autoref{table:reduced_hardware_footprint}). Um possível diagrama do projeto para esse trabalho futuro foi apresentado na \autoref{fig:integracao_avs_aws_iot}.
+
+Outra sugestão de trabalho futuro é a implementação do suporte a outras linguagens, como o português e o italiano, para a habilidade \textit{B-L475E-IOT01A2-Skill}.
+
+Por fim, outro trabalho importante é a produtização da habilidade \textit{B-L475E-IOT01A2}. A produtização de habilidades permite que usuários tenham acesso aos recursos dessa tecnologia em seus dispositivos Alexa após o \textit{download} na loja de habilidades da Amazon.
+
+A série de vídeos \href{https://www.youtube.com/playlist?list=PLdZn93YfA_1ZP1WFkz6bm08v3zFfWwfGW}{Zero to Hero: Alexa Skills}, hospedada no canal \href{https://www.youtube.com/@AlexaDevelopers}{Alexa Developers}, demonstra como adicionar funcionalidades à habilidades Alexa. Os vídeos \href{https://www.youtube.com/watch?v=NXVmHWZZcjw&list=PLdZn93YfA_1ZP1WFkz6bm08v3zFfWwfGW&index=2}{Part 2: Skill Internationalization (i18n), Interceptors \& Error Handling} e \href{https://www.youtube.com/watch?v=I0fxuQQkLYg&list=PLdZn93YfA_1ZP1WFkz6bm08v3zFfWwfGW&index=11}{Part 11: Publishing} mostram como adicionar novas linguagens à habilidades Alexa e o processo de publicação, respectivamente.

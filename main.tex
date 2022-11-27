@@ -24,6 +24,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{tabularray}
 \usepackage{longtable}
+\usepackage{float}
 
 % ------------------------------------------------------------------------------------------------
 % JSON
@@ -208,9 +209,11 @@
 % -----------------------------------------------------------------------------
 \begin{siglas}
     \item[ASK] Alexa Skills Kit
+    \item[AVS] Alexa Voice Service
     \item[AWS] Amazon Web Services
     \item[CLI] AWS Command Line Interface
     \item[EC2] Amazon Elastic Compute Cloud
+    \item[FOB] Livre A Bordo
     \item[HTTPS] Hypertext Transfer Protocol Secure
     \item[IAM] AWS Identity and Access Management
     \item[IDE] Ambiente de desenvolvimento integrado
@@ -269,14 +272,15 @@
 % -----------------------------------------------------------------------------
 % Referências bibliográficas
 % -----------------------------------------------------------------------------
-% \bibliographystyle{plain}
-% \begin{small}
-% \bibliography{Referências/referencias_zotero}
-% \end{small}
+\bibliographystyle{plain}
+\begin{small}
+\bibliography{Referencias}
+\end{small}
 
 % -----------------------------------------------------------------------------
 % Apêndice
 % -----------------------------------------------------------------------------
-\include{Apêndice/Apêndice}
+\appendix
+\include{Apendice/Apendice}
 
 \end{document}
