@@ -5,7 +5,7 @@
 % -----------------------------------------------------------------------------
 \section{IoT}
 
-Nos últimos anos, observou-se a ascensão de dispositivos inteligentes, dispositivos que se conectam à Internet. Esses dispositivos se comunicam entre si, possuem sensores e outras tecnologias. Em termos simples, define-se IoT como uma rede de itens - cada um com sensores integrados - que são conectados à Internet (IEEE,"\textit{Internet of Things}", 2014).
+Nos últimos anos, observou-se a ascensão de dispositivos inteligentes, dispositivos que se conectam à Internet. Esses dispositivos se comunicam entre si, possuem sensores e outras tecnologias. Em termos simples, define-se IoT como uma rede de itens - cada um com sensores integrados - que são conectados à Internet (IEEE,``\textit{Internet of Things}'', 2014).
 
 Aprofundando, IoT também pode ser definido como uma rede que engloba um sistema de dispositivos de computação inter-relacionados, máquinas mecânicas e digitais, objetos, animais ou pessoa, e a capacidade de transferir dados através de uma rede sem a necessidade de interação entre humanos (Alexander S. Gillis, 2022). A presença de tecnologias de nuvem, \textit{big data} e redes móveis, por exemplo, em redes de IoT permite o compartilhamento e a coleta de dados com o mínimo de intervenção humana (ORACLE, 2022). Pode-se listar as seguintes tecnologias como as protagonistas no crescimento do uso da tecnologia IoT:
 
@@ -13,7 +13,7 @@ Aprofundando, IoT também pode ser definido como uma rede que engloba um sistema
 	\item Acesso a tecnologia de sensores de baixo custo e baixa potência;
 	\item Conectividade;
 	\item Plataformas de computação em nuvem;
-	\item Machine learning e análise avançada;
+	\item Aprendizado de máquina e análise avançada;
 	\item Processamento de linguagem natural (Amazon Alexa, por exemplo).
 \end{itemize}
 
@@ -25,13 +25,6 @@ Uma característica comum dos dispositivos IoT é a necessidade de componentes d
 	\item Sensores;
 	\item Atuadores;
 \end{itemize}
-
-% -----------------------------------------------------------------------------
-% Capítulo 2.2 - Computação em Nuvem
-% -----------------------------------------------------------------------------
-\section{Computação em Nuvem}
-
-PENDING...
 
 % -----------------------------------------------------------------------------
 % Capítulo 2.2 - Computação em nuvem com a AWS
@@ -86,9 +79,9 @@ A \autoref{fig:iam_diagram} apresenta um diagrama detalhando o funcionamento do 
 % -----------------------------------------------------------------------------
 \section{Segurança}\label{section:aws_iot_security}
 
-A AWS adota um modelo de responsabilidade compartilhada de segurança e conformidade entre a AWS e o cliente. Esse modelo tem como principais conceitos o que a Amazon chama de "segurança da nuvem" e "segurança na nuvem".
+A AWS adota um modelo de responsabilidade compartilhada de segurança e conformidade entre a AWS e o cliente. Esse modelo tem como principais conceitos o que a Amazon chama de ``segurança da nuvem'' e ``segurança na nuvem''.
 
-A "segurança da nuvem" define que a AWS é responsável por prover serviços seguros proteger a infraestrutura que executa todos os serviços oferecidos na Nuvem AWS. Já a "segurança na nuvem" é definida pelo serviço da AWS que o cliente estiver usando. Por exemplo, o serviço Amazon EC2 exige que o cliente execute todas as tarefas necessárias de configuração e gerenciamento da segurança. o cliente também é responsável por fatores como a sensibilidade dos dados, os requisitos da empresa e aplicáveis leis e regulações. A \autoref{fig:modelo_compartilhado_de_responsabilidade} mostra um diagrama oferecido pela AWS que descreve o modelo compartilhado de responsabilidade.
+A ``segurança da nuvem'' define que a AWS é responsável por prover serviços seguros proteger a infraestrutura que executa todos os serviços oferecidos na Nuvem AWS. Já a ``segurança na nuvem'' é definida pelo serviço da AWS que o cliente estiver usando. Por exemplo, o serviço Amazon EC2 exige que o cliente execute todas as tarefas necessárias de configuração e gerenciamento da segurança. o cliente também é responsável por fatores como a sensibilidade dos dados, os requisitos da empresa e aplicáveis leis e regulações. A \autoref{fig:modelo_compartilhado_de_responsabilidade} mostra um diagrama oferecido pela AWS que descreve o modelo compartilhado de responsabilidade.
 
 \begin{figure}[htbp]
 	\centering
@@ -106,7 +99,7 @@ As credenciais geradas para cada dispositivo são uma forma de autenticação. A
 
 As políticas, por sua vez, são mecanismos de autorização. Autorização é o processo de garantir permissões a uma identidade autenticada. De forma simples, as políticas determinam o que uma identidade autenticada pode fazer. Considere, por exemplo, um dispositivo conectado ao serviço AWS IoT com um certificado X.509. Com um documento de política, esse dispositivo pode ter acesso a todos os tópicos MQTT ou um número restrito de tópicos.
 
-Para o gerenciamento de políticas, a AWS faz uso de documentos no formato JSON. O \autoref{lst:iot_policy} mostra um exemplo de política que dá permissões para um dispositivo IoT acessar recursos do serviço AWS IoT de um usuário raiz com ID 332527922592 e localizado na região "\textit{sa-east-1}" (São Paulo).
+Para o gerenciamento de políticas, a AWS faz uso de documentos no formato JSON. O \autoref{lst:iot_policy} mostra um exemplo de política que dá permissões para um dispositivo IoT acessar recursos do serviço AWS IoT de um usuário raiz com ID 332527922592 e localizado na região ``\textit{sa-east-1}'' (São Paulo).
 
 \begin{lstlisting}[float=htbp,language=json,firstnumber=1,caption={Exemplo de uma política dando permissões de uso do serviço AWS IoT para um dispositivo IoT.},label=lst:iot_policy]
 {
@@ -193,7 +186,7 @@ Dessa forma, o AWS IoT Core é o serviço que permite a gerência de dispositivo
 % -----------------------------------------------------------------------------
 \section{AWS Lambda}\label{section:aws_lambda}
 
-O AWS Lambda é um serviço que permite a execução de códigos sem que o usuário se preocupe com infraestrutura. A computação ocorre sem servidor e é orientado a eventos. Esses eventos podem ser mudanças de estado ou atualizações, como por exemplo o usuário acionando alguma tarefa através da Alexa. O AWS Lambda permite, também, que o usuário estenda a lógica de outros serviços da AWS. Sumariamente, o serviço AWS Lambda permite que o usuário execute serviços de \textit{backend} sem provisionar ou gerenciar servidores.
+O AWS Lambda é um serviço que permite a execução de códigos sem que o usuário se preocupe com infraestrutura. A computação ocorre sem servidor e é orientado a eventos. Esses eventos podem ser mudanças de estado ou atualizações, como por exemplo o usuário acionando alguma tarefa através da Alexa. O AWS Lambda permite, também, que o usuário estenda a lógica de outros serviços da AWS. Sumariamente, o serviço AWS Lambda permite que o usuário execute serviços de back-end sem provisionar ou gerenciar servidores.
 
 O nível gratuito do AWS Lambda inclui um milhão de solicitações gratuitas por mês e 400.000 GB-segundos de tempo de computação por mês (AWS Lambda, 2022). Caso esses limites sejam excedidos, a precificação acontece sobre o número total de solicitações feitas por todas as funções. O preço final depende da quantidade de memória alocada por função.
 
@@ -360,7 +353,44 @@ O formato de uma mensagem do tipo \textit{Unsuback} está apresentado na \autore
 % -----------------------------------------------------------------------------
 \section{Amazon Alexa}\label{section:amazon_alexa}
 
-PENDING...
+A Amazon Alexa, conhecida simplesmente como Alexa, é uma assistente virtual inteligente capaz de controlar dispositivos inteligentes e ter iterações de voz com os usuários. As capacidades da Alexa podem ser expandidas por terceiros através da instalação de habilidades (aplicativos). Algumas categorias de habilidades em destaque são: Notícias, Negócios e Finanças, Jogos e Curiosidades, Saúde e Boa Forma e Produtividade. A loja oficial de habilidades da Amazon permite que o usuário faça busca de habilidades por categorias, assim como pode ser visto na \autoref{fig:alexa_skills_categorias}.
+
+\begin{figure}[htbp]
+	\centering
+	\caption{Busca de habilidades da Alexa por categorias.}
+	\includegraphics[scale=0.8]{Imagens/alexa_skills_categorias.png}
+	\legend{Fonte: Amazon (2022).}
+	\label{fig:alexa_skills_categorias}
+\end{figure}
+
+\subsection{Alexa Skills Kit}\label{subsection:alexa_skills_kit}
+O ASK fornece APIs e ferramentas para a criação de habilidades Alexa. Empresas podem desenvolver habilidades para seus produtos e serviços, ou contratarem uma agência especialista em Alexa. Uma habilidade Alexa tem tanto uma interface de voz com o usuário, como uma lógica de aplicativo (Desenvolvedor Amazon, 2022).
+
+Quando um usuário interage com um dispositivo Alexa, ocorre um processamento da fala no contexto do seu modelo de interação para interpretar o que foi requisitado. A Alexa, então, envia a solicitação à sua lógica de aplicação, responsável por processar e computar essa informação. Essa computação acontece em nuvem AWS ou outro servidor. Dessa forma, caracteriza-se o processamento da fala e interpretação do que foi requisitado como front-end e a computação da lógica de aplicação como back-end. A \autoref{fig:diagrama_habilidades_alexa} mostra um diagrama produzido pela Amazon explicando o funcionamento de uma habilidade Alexa.
+
+\begin{figure}[htbp]
+	\centering
+	\caption{Diagrama explicando o funcionamento de uma habilidade Alexa.}
+	\includegraphics[scale=0.35]{Imagens/diagrama_habilidades_alexa.png}
+	\legend{Fonte: Desenvolvedor Amazon (2022).}
+	\label{fig:diagrama_habilidades_alexa}
+\end{figure}
+
+Para o desenvolvimento de software, os ASK SDKs permitem uma redução da complexidade do projeto. Os SDKs para Java, Node.js e Python fornecem funções específicas da linguagem para tarefas comuns, permitindo a concentração na lógica das habilidades, não no código padrão (Desenvolvedor Amazon, 2022). A Amazon também fornece distintas de ferramentas de desenvolvimento. O desenvolvedor pode usar o console do portal ou CLI do ASK para criar, gerenciar, testar e publicar habilidades.
+
+\subsection{Alexa Voice Service}\label{subsection:alexa_voice_service}
+
+A Amazon permite que fabricantes construam dispositivos com a Alexa integrada usando o AVS, um serviço baseado na AWS com APIs que permitem a integração de dispositivos com a Alexa. Dessa forma, produtos usuários do AVS têm acesso a diversos recursos da Alexa, incluindo as habilidades Alexa. A principal vantagem do AVS é o fornecimento de APIs que permitem o reconhecimento automático de fala, com computação executada em nuvem, e compreensão de linguagem natural.
+
+Um exemplo de uso do AVS é um dispositivo IoT com a Alexa embutida. Nesse exemplo, o desenvolvedor fará uso dos serviços AVS, AWS IoT e Login da Amazon. Um diagrama desenvolvido pela Amazon mostrando um exemplo de integração do AVS ao AWS IoT pode ser visto na \autoref{fig:integracao_avs_aws_iot}.
+
+\begin{figure}[htbp]
+	\centering
+	\caption{Diagrama de integração do AVS ao serviço AWS IoT Core.}
+	\includegraphics[scale=0.6]{Imagens/integracao_avs_aws_iot.png}
+	\legend{Fonte: Amazon AWS (2022).}
+	\label{fig:integracao_avs_aws_iot}
+\end{figure}
 
 % -----------------------------------------------------------------------------
 % Capítulo 2.6 - Trabalhos Correlatos
@@ -385,7 +415,7 @@ Para testes com o protótipo, uma maquete e um circuito foram montado. Esse circ
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Circuito eletrônico completo da maquete do projeto "PROTÓTIPO DE AUTOMAÇÃO RESIDENCIAL UTILIZANDO UMA ASSISTENTE DE VOZ".}
+	\caption{Circuito eletrônico completo da maquete do projeto ``PROTÓTIPO DE AUTOMAÇÃO RESIDENCIAL UTILIZANDO UMA ASSISTENTE DE VOZ''.}
 	\includegraphics[scale=0.4]{Imagens/circuito_eletronico_leandro_dallarosa.png}
 	\legend{Fonte: Monografia de Leandro Dallarosa Neto (2018).}
 	\label{fig:circuito_eletronico_leandro_dallarosa}
@@ -393,7 +423,7 @@ Para testes com o protótipo, uma maquete e um circuito foram montado. Esse circ
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Imagem frontal da maquete do projeto "PROTÓTIPO DE AUTOMAÇÃO RESIDENCIAL UTILIZANDO UMA ASSISTENTE DE VOZ".}
+	\caption{Imagem frontal da maquete do projeto ``PROTÓTIPO DE AUTOMAÇÃO RESIDENCIAL UTILIZANDO UMA ASSISTENTE DE VOZ''.}
 	\includegraphics[scale=0.4]{Imagens/maquete_leandro_dallarosa.png}
 	\legend{Fonte: Monografia de Leandro Dallarosa Neto (2018).}
 	\label{fig:maquete_leandro_dallarosa}
@@ -410,7 +440,7 @@ A \autoref{fig:testing_our_raspberrypi_thing} mostra uma captura de tela do víd
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Captura de tela do vídeo 5 da sequência de vídeos do projeto "\textit{Creating an Alexa voice controlled IoT using a Raspberry Pi}".}
+	\caption{Captura de tela do vídeo 5 da sequência de vídeos do projeto ``\textit{Creating an Alexa voice controlled IoT using a Raspberry Pi}''.}
 	\includegraphics[scale=0.75]{Imagens/testing_our_raspberrypi_thing.png}
 	\legend{Fonte: Produzido pelo autor (2022).}
 	\label{fig:testing_our_raspberrypi_thing}

@@ -3,7 +3,7 @@
 % -----------------------------------------------------------------------------
 % Capítulo 3.1 - Objetivos
 % -----------------------------------------------------------------------------
-\section{Objetivos}
+\section{Objetivos}\label{section:objetivos}
 
 Em resumo, o projeto propõe um protótipo de um nó IoT acionado pela Alexa. O protótipo comunicará com o serviço AWS IoT via tópicos MQTT - protocolo também utilizado na integração do AWS IoT com a Alexa. A \autoref{fig:project_diagram} mostra um diagrama em alto nível do projeto.
 
@@ -156,7 +156,7 @@ Para estabelecer conexão entre o protótipo e o AWS IoT, através do protocolo 
 
 O projeto de exemplo \textit{B-L475E-IOT01-AWS} é disponibilizado dentro do pacote expansão do software AWS IoT para STM32Cube, fornecido pela STMicroelectronics. Esse pacote está disponível para \textit{download} no link \href{https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-aws.html}{AWS IoT software expansion for STM32Cube}. Nesse exemplo, o dispositivo se conecta ao AWS IoT com as credenciais carregadas via USB. Quando o botão do usuário é pressionado, um comando de alternância de LED é enviado para o IoT \textit{endpoint}, que retorna a mensagem para a placa e aciona a alternância do LED. Os dados de sensores da placa também são coletados e publicados na nuvem a cada 10 segundos.
 
-A aplicação envia o comando de alternância do estado do LED para o tópico MQTT "\$aws/things/B-L475E-IOT01A2/shadow/update" e segue o formato JSON apresentado no \autoref{lst:set_led_state}.
+A aplicação envia o comando de alternância do estado do LED para o tópico MQTT ``\$aws/things/B-L475E-IOT01A2/shadow/update'' e segue o formato JSON apresentado no \autoref{lst:set_led_state}.
 
 \begin{lstlisting}[float=htbp,language=json,firstnumber=1,caption={Formato da mensagem de alternância do estado do LED.},label=lst:set_led_state]
 {
@@ -194,16 +194,16 @@ Para a criação de uma habilidade na Amazon Alexa, fez-se uso do ASK e do Conso
     \item Produtização e monetização da habilidade.
 \end{enumerate}
 
-O nome da habilidade foi definido como \textit{B-L475E-IOT01A2-Skill}. Os itens \autoref{enum:criacao_de_intencoes_amostras_e_slots} e \autoref{enum:definicao_de_endpoint} constituem o \textit{frontend} e o \textit{backend} da habilidade, respectivamente.
+O nome da habilidade foi definido como \textit{B-L475E-IOT01A2-Skill}. Os itens \autoref{enum:criacao_de_intencoes_amostras_e_slots} e \autoref{enum:definicao_de_endpoint} constituem o front-end e o back-end da habilidade, respectivamente.
 
 % -----------------------------------------------------------------------------
 % Capítulo 3.5.1 - Frontend da habilidade B-L475E-IOT01A2-Skill
 % -----------------------------------------------------------------------------
-\subsection{\textit{Frontend} da habilidade \textit{B-L475E-IOT01A2-Skill}}\label{subscrion:frontend_bl475eiot01a2_skill}
+\subsection{Front-end da habilidade \textit{B-L475E-IOT01A2-Skill}}\label{subscrion:frontend_bl475eiot01a2_skill}
 
-O ASK permite que o desenvolvimento do \textit{frontend} aconteça via interface web e/ou arquivo JSON. O código que define o \textit{frontend} da aplicação pode ser encontrada no seguinte repositório git: \href{https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ide-vs.html}{guiguitz/PENDING}. Um trecho do código está disponibilizado no \autoref{lst:frontend_bl475eiot01a2_skill}.
+O ASK permite que o desenvolvimento do front-end aconteça via interface web e/ou arquivo JSON. O código que define o front-end da aplicação pode ser encontrada no seguinte repositório git: \href{https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ide-vs.html}{guiguitz/PENDING}. Um trecho do código está disponibilizado no \autoref{lst:frontend_bl475eiot01a2_skill}.
 
-\begin{lstlisting}[float=htbp,language=json,firstnumber=1,caption={Trecho do arquivo JSON que descreve o \textit{frontend} da habilidade \textit{B-L475E-IOT01A2-Skill}.},label=lst:frontend_bl475eiot01a2_skill]
+\begin{lstlisting}[float=htbp,language=json,firstnumber=1,caption={Trecho do arquivo JSON que descreve o front-end da habilidade \textit{B-L475E-IOT01A2-Skill}.},label=lst:frontend_bl475eiot01a2_skill]
 {
 // ...
   "invocationName": "my node thing",
@@ -254,11 +254,11 @@ O ASK permite que o desenvolvimento do \textit{frontend} aconteça via interface
 % -----------------------------------------------------------------------------
 % Capítulo 3.5.2 - Backend da habilidade B-L475E-IOT01A2-Skill
 % -----------------------------------------------------------------------------
-\subsection{\textit{Backend} da habilidade \textit{B-L475E-IOT01A2-Skill}}\label{subscrion:backend_bl475eiot01a2_skill}
+\subsection{Back-end da habilidade \textit{B-L475E-IOT01A2-Skill}}\label{subscrion:backend_bl475eiot01a2_skill}
 
-Para o desenvolvimento do \textit{backend}, optou-se por estender as funcionalidades do ASK através de funções no AWS Lambda. Dessa forma, o desenvolvimento pode acontecer em Node.js, Python etc, assim como foi mencionado na \autoref{section:aws_lambda}. Para esse projeto, escolheu-se Python e \textit{ask-sdk} como linguagem de desenvolvimento e pacote SDK, respectivamente. \textit{ask-sdk} é o pacote referência para o desenvolvimento com o ASK. A função hospedada no AWS Lambda foi nomeada \textit{B-L475E-IOT01A2-Handler} e pode ser encontrada no seguinte repositório git: \href{https://github.com/guiguitz/B-L475E-IOT01A2-Handler}{guiguitz/B-L475E-IOT01A2-Handler}.
+Para o desenvolvimento do back-end, optou-se por estender as funcionalidades do ASK através de funções no AWS Lambda. Dessa forma, o desenvolvimento pode acontecer em Node.js, Python etc, assim como foi mencionado na \autoref{section:aws_lambda}. Para esse projeto, escolheu-se Python e \textit{ask-sdk} como linguagem de desenvolvimento e pacote SDK, respectivamente. \textit{ask-sdk} é o pacote referência para o desenvolvimento com o ASK. A função hospedada no AWS Lambda foi nomeada \textit{B-L475E-IOT01A2-Handler} e pode ser encontrada no seguinte repositório git: \href{https://github.com/guiguitz/B-L475E-IOT01A2-Handler}{guiguitz/B-L475E-IOT01A2-Handler}.
 
-A função Lambda é orientada a eventos, assim como já foi explicado na \autoref{section:aws_lambda} e segue o diagrama de estados apresentado na \autoref{fig:diagrama_de_estados_bl475eiot01a2_handler}. Em termos práticos, após o acionamento da intenção \textit{SetLedStateIntent} através das frases "set led on", "set led off", "turn led on" e "set led off", função \textit{B-L475E-IOT01A2-Handler} envia uma mensagem para o tópico MQTT "\$aws/things/B-L475E-IOT01A2/shadow/update" que segue o formato apresentado no \autoref{lst:set_led_state}.
+A função Lambda é orientada a eventos e segue o diagrama de estados apresentado na \autoref{fig:diagrama_de_estados_bl475eiot01a2_handler}. Em termos práticos, após o acionamento da intenção \textit{SetLedStateIntent} através das frases ``set led on'', ``set led off'', ``turn led on'' e ``set led off'', função \textit{B-L475E-IOT01A2-Handler} envia uma mensagem para o tópico MQTT ``\$aws/things/B-L475E-IOT01A2/shadow/update'' que segue o formato apresentado no \autoref{lst:set_led_state}.
 
 \begin{figure}[htbp]
   \centering
