@@ -5,5 +5,4 @@
 - [ ] Link da Sala no MS Teams
 - [ ] Agradecimentos
 - [ ] Resumo
-- [ ] guiguitz/B-L475E-IOT01A2-Skill
 - [ ] YouTube Video
