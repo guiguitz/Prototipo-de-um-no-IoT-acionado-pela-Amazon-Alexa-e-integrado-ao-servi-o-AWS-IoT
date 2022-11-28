@@ -40,45 +40,11 @@ A seguir, tem-se os requisitos não-funcionais:
 % -----------------------------------------------------------------------------
 \section{Projeto de Hardware}
 
-Uma vez escolhidos os requisitos funcionais e não-funcionais do projeto, inicia-se o projeto de hardware. Tomando o baixo custo de prototipagem como um importante requisito do projeto, optou-se pelo uso de sistemas embarcados no projeto. Computadores e notebooks pessoais, por exemplo, possuem um propósito geral e um alto valor agregado, enquanto um sistema embarcado realiza um conjunto de tarefas predefinidas e normalmente possuem um menor valor agregado (PrimeUP, 2022). Isso posto, inicia-se o estudo dos requisitos de um hardware a ser utilizado em aplicações IoT. Como um dos requisitos funcionais é a possibilidade de implementação de uma Alexa integrada, estuda-se os parâmetros mínimos recomendados pela AWS para um dispositivo com a Alexa integrada. Esses requisitos podem ser vistos na \autoref{table:reduced_hardware_footprint}.
-
-% TODO: Converter a tabela para o formato ABNT!
-% \begin{longtable}[]{@{}cccc@{}}
-% 	\caption{Demonstration of simple table syntax.}\tabularnewline
-% 	% \toprule
-% 	% Right & Left & Center & Default\tabularnewline
-% 	% \midrule
-% 	% \endfirsthead
-% 	\toprule
-% 	Right & Left & Center & Default\tabularnewline
-% 	\midrule
-% 	\endhead
-% 	12    & 12   & 12     & 12\tabularnewline
-% 	123   & 123  & 123    & 123\tabularnewline
-% 	1     & 1    & 1      & 1\tabularnewline
-% 	\bottomrule
-% 	\caption*{Fonte: Autor.}
-% 	\label{mytable}
-% \end{longtable}
-
-% \begin{longtable}[]{@{}cccccc@{}}
-% 	\caption{Demonstration of simple table syntax.}\tabularnewline
-% 	\toprule
-% 	Processador & RAM & SO & Conectividade & \# de Microfones & Alto-falante\tabularnewline
-% 	\midrule
-% 	\endfirsthead
-% 	\toprule
-% 	Processador & RAM & SO & Conectividade & \# de Microfones & Alto-falante\tabularnewline
-% 	\midrule
-% 	\endhead
-% 	\begin{tabular}[c]{@{}c@{}}ARM M7 or equivalent\\ Arm M4 + AFE DSP\end{tabular} & \begin{tabular}[c]{@{}c@{}}MB for ARM M7\\ 500KB for M4 + AFE DSP\end{tabular} & FreeRTOS & MQTT/Wi-Fi & 2+ & Otimizado para reprodução de fala \\hline
-% 	\bottomrule
-% 	\caption*{Fonte: Autor.}
-% 	\label{mytable}
-% \end{longtable}
+Uma vez escolhidos os requisitos funcionais e não-funcionais do projeto, inicia-se o projeto de hardware. Tomando o baixo custo de prototipagem como um importante requisito do projeto, optou-se pelo uso de sistemas embarcados no projeto. Computadores e notebooks pessoais, por exemplo, possuem um propósito geral e um alto valor agregado, enquanto um sistema embarcado realiza um conjunto de tarefas predefinidas e normalmente possuem um menor valor agregado \cite{ref:033}. Isso posto, inicia-se o estudo dos requisitos de um hardware a ser utilizado em aplicações IoT. Como um dos requisitos funcionais é a possibilidade de implementação de uma Alexa integrada, estuda-se os parâmetros mínimos recomendados pela AWS para um dispositivo com a Alexa integrada. Esses requisitos podem ser vistos na \autoref{table:reduced_hardware_footprint}.
 
 \begin{table}[htbp]
     \centering
+    \caption{Parâmetros mínimos recomendados pela AWS para o desenvolvimento de um dispositivo de IoT integrado à AVS.}
     \begin{tabular}{|c|c|}
         \hline
         \textbf{Processador}      & \begin{tabular}[c]{@{}c@{}}ARM M7 or equivalent\\ Arm M4 + AFE DSP\end{tabular} \\ \hline
@@ -88,11 +54,45 @@ Uma vez escolhidos os requisitos funcionais e não-funcionais do projeto, inicia
         \textbf{\# de Microfones} & 2+                                                                              \\ \hline
         \textbf{Alto-falante}     & Optimized for speech playback                                                   \\ \hline
     \end{tabular}
-    \caption{Parâmetros mínimos recomendados pela AWS para o desenvolvimento de um dispositivo de IoT integrado à AVS.}
+    \legend{Fonte: \cite{ref:034}}
     \label{table:reduced_hardware_footprint}
 \end{table}
 
-Para a prototipagem, alguns kits de desenvolvimento disponíveis no mercado foram estudados. As tabelas \autoref{table:development_kit_a} e \autoref{table:development_kit_b}, presentes no \autoref{chapter:apendice}, mostram informações coletadas de cinco diferentes kits.
+Para a prototipagem, alguns kits de desenvolvimento disponíveis no mercado foram estudados. As tabelas \autoref{table:development_kit_a} e \autoref{table:development_kit_b} mostram informações coletadas de cinco diferentes kits.
+
+\begin{table}[htbp]
+  \caption{kits de desenvolvimento recomendados pela Amazon para o desenvolvimento de aplicações IoT (A).}
+  \begin{tblr}{@{}|X[c,valign=m,gray!30]|X[c,valign=m]|X[c,valign=m]|X[c,valign=m]|X[c,valign=m]|X[c,valign=m]|@{}}
+      \hline
+      \textbf{Número de produto}        & B-L475E-IOT01A2                                                           & CORE-V MCU DevKit                                                   & SLN-ALEXA-IOT                                  \\ \hline
+      \textbf{Descrição}                & STM32L4 Discovery kit Nó IoT, low-power wireless, BLE, NFC, SubGHz, Wi-Fi & European RISC-V chip for IoT development kit                        & EdgeReady MCU Based Solution for Alexa for IOT \\ \hline
+      \textbf{Processador}              & Arm® Cortex®-M4                                                           & CV32E40P processor core                                             & Arm® Cortex®-M7 Core                           \\ \hline
+      \textbf{FreeRTOS}                 & Sim                                                                       & Não Disponível                                                      & Sim                                            \\ \hline
+      \textbf{Conectividade}            & Inventek ISM43362 Wi-Fi Module                                            & Espressif AWS IoT ExpressLink Module for AWS IoT cloud interconnect & Bluetooth LE 4.2, 802.11 b/g/n Wi-Fi®          \\ \hline
+      \textbf{Microfones}               & 2 digital omnidirectional microphones (MP34DT01)                          & Não Disponível                                                      & Digital MEMS microphones (x3)                  \\ \hline
+      \textbf{Alto-falante}             & Não Disponível                                                            & Não Disponível                                                      & Não Disponível                                 \\ \hline
+      \textbf{Preço nas Lojas Oficiais} & \$53,00                                                                   & Preços Individuais                                                  & \$171,35                                       \\ \hline
+  \end{tblr}
+  \legend{Fontes: \cite{ref:035}, \cite{ref:036}, \cite{ref:037}}
+  \label{table:development_kit_a}
+\end{table}
+
+\begin{table}[htbp]
+  \caption{kits de desenvolvimento recomendados pela Amazon para o desenvolvimento de aplicações IoT (B).}
+  \begin{tblr}{@{}|X[c,valign=m,gray!30]|X[c,valign=m]|X[c,valign=m]|X[c,valign=m]|X[c,valign=m]|X[c,valign=m]|@{}}
+      \hline
+      \textbf{Número de produto}        & Home Hub 100 Dev Kit for Amazon AVS                                                                                                                                             & STEVAL-VOICE-UI                                                                                                                                                            \\ \hline
+      \textbf{Descrição}                & A hardware and software development kit with multi-core connectivity designed to support AVS for AWS IoT Core connected devices                                                 & Qualified hardware reference design enabling easy and cost effective addition of the Alexa Voice Service (AVS) Integration for AWS IoT core to your smart embedded devices \\ \hline
+      \textbf{Processador}              & Arm Cortex-M4F CPU                                                                                                                                                              & Dual Arm® Cortex®-A7 and Cortex®-M4 Cores                                                                                                                                  \\ \hline
+      \textbf{FreeRTOS}                 & Sim                                                                                                                                                                             & Sim                                                                                                                                                                        \\ \hline
+      \textbf{Conectividade}            & Integrated Bluetooth 5, Qualcomm® Bluetooth Mesh connectivity, low power Wi-Fi 802.11n in 2.4GHz/5GHz bands, and 802.15.4, with support for ZigBee3.0 and Thread via OpenThread & WIFI subsystem including Murata 1DX module used in bypass mode and ISSI IS25LP016D 2Mbytes NOR flash hosting WIFI low level software                                       \\ \hline
+      \textbf{Microfones}               & Não Disponível                                                                                                                                                                  & 2 MP23DB01HP Microphone Mems                                                                                                                                               \\ \hline
+      \textbf{Alto-falante}             & 1x                                                                                                                                                                              & 1x (8 ohm)                                                                                                                                                                 \\ \hline
+      \textbf{Preço nas Lojas Oficiais} & £42.95                                                                                                                                                                          & \$248.75                                                                                                                                                                   \\ \hline
+  \end{tblr}
+  \legend{Fontes: \cite{ref:038}, \cite{ref:039}}
+  \label{table:development_kit_b}
+\end{table}
 
 Assim como pode ser visto na \autoref{table:reduced_hardware_footprint}, A AWS recomenda o Sistema Operacional FreeRTOS, descartando o \textit{CORE-V MCU DevKit}. Ademais, definiu-se como requisito funcional a possibilidade de comunicação do usuário com o dispositivo através de linguagem natural, demandando no mínimo dois microfones e descartando o \textit{Home Hub 100 Dev Kit for Amazon AVS}.
 
@@ -104,7 +104,7 @@ Dessa forma, conclui-se que o kit \textit{B-L475E-IOT01A2} é o dispositivo, com
     \centering
     \caption{Kit de desenvolvimento escolhido para ser protótipo do projeto (\textit{B-L475E-IOT01A2}).}
     \includegraphics[scale=0.7]{Imagens/B-L475E-IOT01A2.png}
-    \legend{Fonte: STMicroeletronics (2022).}
+    \legend{Fonte: \cite{ref:035}.}
     \label{fig:B-L475E-IOT01A2}
 \end{figure}
 
@@ -154,7 +154,7 @@ Ao final do processo, o AWS IoT permite que o usuário faça \textit{download} d
 
 Para estabelecer conexão entre o protótipo e o AWS IoT, através do protocolo MQTT, alguns projetos de exemplo disponibilizados pela STMicroelectronics e pelo Amazon FreeRTOS foram utilizados. Destaca-se os projetos \textit{aws-demos} e o \textit{B-L475E-IOT01-AWS}.
 
-O projeto de exemplo \textit{B-L475E-IOT01-AWS} é disponibilizado dentro do pacote expansão do software AWS IoT para STM32Cube, fornecido pela STMicroelectronics. Esse pacote está disponível para \textit{download} no link \href{https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-aws.html}{AWS IoT software expansion for STM32Cube}. Nesse exemplo, o dispositivo se conecta ao AWS IoT com as credenciais carregadas via USB. Quando o botão do usuário é pressionado, um comando de alternância de LED é enviado para o IoT \textit{endpoint}, que retorna a mensagem para a placa e aciona a alternância do LED. Os dados de sensores da placa também são coletados e publicados na nuvem a cada 10 segundos.
+O projeto de exemplo \textit{B-L475E-IOT01-AWS} é disponibilizado dentro do pacote expansão do software AWS IoT para STM32Cube, fornecido pela STMicroelectronics \cite{ref:040}. Nesse exemplo, o dispositivo se conecta ao AWS IoT com as credenciais carregadas via USB. Quando o botão do usuário é pressionado, um comando de alternância de LED é enviado para o IoT \textit{endpoint}, que retorna a mensagem para a placa e aciona a alternância do LED. Os dados de sensores da placa também são coletados e publicados na nuvem a cada 10 segundos.
 
 A aplicação envia o comando de alternância do estado do LED para o tópico MQTT ``\$aws/things/B-L475E-IOT01A2/shadow/update'' e segue o formato JSON apresentado no \autoref{lst:set_led_state}.
 
@@ -168,7 +168,7 @@ A aplicação envia o comando de alternância do estado do LED para o tópico MQ
 }
 \end{lstlisting}
 
-O canal oficial da STMicroelectronics no YouTube disponibiliza um vídeo demonstrando o projeto sendo executado. O vídeo está disponível no link \href{https://www.youtube.com/watch?v=6eUqxjBL_wI}{Getting starting with STM32L4 Discovery kit IoT node}.
+O canal oficial da STMicroelectronics no YouTube disponibiliza um vídeo demonstrando o projeto sendo executado \cite{ref:041}.
 
 \textbf{Notas}:
 \begin{alineas}
@@ -184,7 +184,7 @@ Para fins de prototipagem, o exemplo disponibilizado pela STMicroelectronics ate
 % -----------------------------------------------------------------------------
 \section{Criação de Habilidades com o \textit{Alexa Skills Kit}}
 
-Para a criação de uma habilidade na Amazon Alexa, fez-se uso do ASK e do Console do Desenvolvedor Alexa. A Amazon sugere que o desenvolvimento de uma habilidade ocorra seguindo os seguintes passos:
+Para a criação de uma habilidade na Amazon Alexa, fez-se uso do ASK e do Console do Desenvolvedor Alexa. A Amazon sugere que o desenvolvimento de uma habilidade ocorra seguindo os seguintes passos \cite{ref:042}:
 
 \begin{enumerate}
     \item Criação de um nome para a habilidade;
@@ -201,7 +201,7 @@ O nome da habilidade foi definido como \textit{B-L475E-IOT01A2-Skill}. Os itens 
 % -----------------------------------------------------------------------------
 \subsection{Front-end da habilidade \textit{B-L475E-IOT01A2-Skill}}\label{subscrion:frontend_bl475eiot01a2_skill}
 
-O ASK permite que o desenvolvimento do front-end aconteça via interface web e/ou arquivo JSON. O código que define o front-end da aplicação pode ser encontrada no seguinte repositório git: \href{https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ide-vs.html}{guiguitz/PENDING}. Um trecho do código está disponibilizado no \autoref{lst:frontend_bl475eiot01a2_skill}.
+O ASK permite que o desenvolvimento do front-end aconteça via interface web e/ou arquivo JSON. Um trecho do código está disponibilizado no \autoref{lst:frontend_bl475eiot01a2_skill} \cite{ref:043}.
 
 \begin{lstlisting}[float=htbp,language=json,firstnumber=1,caption={Trecho do arquivo JSON que descreve o front-end da habilidade \textit{B-L475E-IOT01A2-Skill}.},label=lst:frontend_bl475eiot01a2_skill]
 {
@@ -256,9 +256,9 @@ O ASK permite que o desenvolvimento do front-end aconteça via interface web e/o
 % -----------------------------------------------------------------------------
 \subsection{Back-end da habilidade \textit{B-L475E-IOT01A2-Skill}}\label{subscrion:backend_bl475eiot01a2_skill}
 
-Para o desenvolvimento do back-end, optou-se por estender as funcionalidades do ASK através de funções no AWS Lambda. Dessa forma, o desenvolvimento pode acontecer em Node.js, Python etc, assim como foi mencionado na \autoref{section:aws_lambda}. Para esse projeto, escolheu-se Python e \textit{ask-sdk} como linguagem de desenvolvimento e pacote SDK, respectivamente. \textit{ask-sdk} é o pacote referência para o desenvolvimento com o ASK. A função hospedada no AWS Lambda foi nomeada \textit{B-L475E-IOT01A2-Handler} e pode ser encontrada no seguinte repositório git: \href{https://github.com/guiguitz/B-L475E-IOT01A2-Handler}{guiguitz/B-L475E-IOT01A2-Handler}.
+Para o desenvolvimento do back-end, optou-se por estender as funcionalidades do ASK através de funções no AWS Lambda. Dessa forma, o desenvolvimento pode acontecer em Node.js, Python etc. Para esse projeto, escolheu-se Python e \textit{ask-sdk} como linguagem de desenvolvimento e pacote SDK, respectivamente. \textit{ask-sdk} é o pacote referência para o desenvolvimento com o ASK. A função hospedada no AWS Lambda foi nomeada \textit{B-L475E-IOT01A2-Handler} \cite{ref:044}.
 
-A função Lambda é orientada a eventos e segue o diagrama de estados apresentado na \autoref{fig:diagrama_de_estados_bl475eiot01a2_handler}. Em termos práticos, após o acionamento da intenção \textit{SetLedStateIntent} através das frases ``set led on'', ``set led off'', ``turn led on'' e ``set led off'', função \textit{B-L475E-IOT01A2-Handler} envia uma mensagem para o tópico MQTT ``\$aws/things/B-L475E-IOT01A2/shadow/update'' que segue o formato apresentado no \autoref{lst:set_led_state}.
+A função Lambda é orientada a eventos e segue o diagrama de estados apresentado na \autoref{fig:diagrama_de_estados_bl475eiot01a2_handler}. Em termos práticos, após o acionamento da intenção \textit{SetLedStateIntent} através das frases ``set led on'', ``set led off'', ``turn led on'' e ``set led off'', a função \textit{B-L475E-IOT01A2-Handler} envia uma mensagem para o tópico MQTT ``\$aws/things/B-L475E-IOT01A2/shadow/update'' que segue o formato apresentado no \autoref{lst:set_led_state}.
 
 \begin{figure}[htbp]
   \centering
